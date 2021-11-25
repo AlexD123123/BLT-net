@@ -1,0 +1,15 @@
+
+config_name: 'APD_alfnet2_thrs0.3_2'
+
+proposals_min_conf: 0.3
+merge_grid_resolution: [20, 20]
+
+allowed_size_arr: [ [[384, 192],[384, 384]],
+                      [[576, 288], [576, 576]],
+                      [[768, 384], [768, 768]]]
+
+scale_factor_arr: [ 1, 1.5, 2]
+inital_padding_arr: [[40, 40], [60, 60], [80, 80]]
+min_required_crop_padding_arr: [ [40, 40], [60, 60], [80, 80]]
+
+

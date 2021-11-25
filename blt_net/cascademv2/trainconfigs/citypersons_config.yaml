@@ -1,0 +1,42 @@
+#this evaluation is used for evaluating hard positive anchors (i.e. all positives are covered by an anchor)
+config_name: 'citypersons_config'
+gpu_ids: 'cuda:0'#'2'
+batch_size: 8 #1 #4 #batch size
+num_epochs: 400
+init_lr: 1e-4
+optimizer: 'Adam'
+backbone: 'mobilenet2'
+head: 'cascademv2head'
+steps: 2  # steps can be {1,2,3}
+augmentBrightness: True
+augmentCrop: True
+use_horizontal_flips: True
+brightness: (0.5, 2, 0.5)
+scale: (0.3, 1.0)
+random_crop: (640, 1280)
+initial_model: '.././data/input/cascademv2/backbones/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224_no_top.h5' #get last model #'/home/alexandrad/results/Classifiers/AlfNet2/valmodels/{}/{}step_{}_{}/{}/mobilenet2_e18_tl1.197_vl-1.000.hdf5'.format(self.backbone,
+add_epoch: -1 #18
+out_path: './../data/output/models/Citypersons'
+
+train_filename: '.././data/input/cascademv2/data/Citypersons/train'
+val_filename: '.././data/input/cascademv2/data/Citypersons/val'
+
+
+img_channel_mean: [103.939, 116.779, 123.68]
+# setting for scales
+#anchor boxes size
+anchor_box_scales: [[16, 24], [32, 48], [64, 80], [128, 160]] #260
+# aspect ratio for each scale
+anchor_ratios: [[0.41], [0.41], [0.41], [0.41]]
+
+# scaling the stdev
+classifier_regr_std: [0.1, 0.1, 0.2, 0.2]
+# overlaps for ignore areas
+#-----------------------------------------
+eval_dataset_type: 'Citypersons'
+eval_min_epoch: 300
+eval_resolution_step: 1
+model_name: '.././data/output/models/Citypersons/mobilenet2_e156_tl0.260_vl-1.000.hdf5'
+eval_output_root: '.././data/output/inference/Citypersons/'
+
+

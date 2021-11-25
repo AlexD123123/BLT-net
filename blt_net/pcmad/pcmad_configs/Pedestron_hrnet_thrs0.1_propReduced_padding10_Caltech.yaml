@@ -1,0 +1,18 @@
+config_name: 'Pedestron_hrnet_thrs0.1_propReduced_padding10_Caltech'
+
+merge_grid_resolution: [20, 20]
+img_shape: [512, 640]
+allowed_size_arr: [[[128, 128], [128, 256], [128, 384], [128, 512],
+                    [256, 128], [256, 256], [256, 384], [256, 512]],
+                       [[384, 192], [384, 384], [384, 576], [384, 768]],
+                       [[512, 256], [512, 512], [512, 768], [512, 1024]],
+                       [[640, 320], [640, 640], [640, 960], [640, 1280]],
+                       ]
+
+scale_factor_arr: [1, 1.5, 2, 2.5]
+inital_padding_arr:            [[10, 20], [20, 40], [30, 60], [40, 80]]
+min_required_crop_padding_arr: [[10, 20], [20, 40], [30, 60], [40, 80]]
+
+proposals_min_conf: 0.1
+
+

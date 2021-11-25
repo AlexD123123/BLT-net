@@ -1,0 +1,52 @@
+config_name: 'alfnet2_2021_02_03_mv2_b8-e400_lr1e-4'
+gpu_ids: 'cuda:0'#'2'
+batch_size: 1 #1 #8 #batch size
+num_epochs: 0
+init_lr: 1e-4
+optimizer: 'Adam'
+train_with_wma: False
+backbone: 'mobilenet2'  # 'mobilenet2'#''mobilenet1' # or 'resnet50'
+head: 'alfnet2_head_sep2'
+steps: 2  # ALF steps can be {1,2,3}
+augmentBrightness: True
+augmentCrop: True
+augment_old: True
+# setting for data augmentation
+use_horizontal_flips: True
+brightness: (0.5, 2, 0.5)
+scale: (0.7, 1.0)
+#img_input: (640, 1280) #(2^7x5, 2^7x10) OK original size    20/750 [..............................] - ETA: 30:07 - train_total: 4.9105 - cls1: 1.4896 - regr1: 0.9223 - cls2: 1.7834 - regr2: 0.7152
+random_crop: (448, 640) #for Caltech_padded is (512,1024) (480,640)
+initial_model: '/raid/algo/SOCISP_SLOW/ADAS/PD/Cityscapes/results/Restore/Classifiers/AlfNet2/valmodels/mobilenet2/2step_640_1280/CP/arch0_separable2_2020_03_31_b8/mobilenet2_e400_tl0.283_vl-1.000.hdf5' #get last model #'/home/alexandrad/results/Classifiers/AlfNet2/valmodels/{}/{}step_{}_{}/{}/mobilenet2_e18_tl1.197_vl-1.000.hdf5'.format(self.backbone,
+
+add_epoch: -1
+out_path: '/raid/algo/SOCISP_SLOW/ADAS/PD/Cityscapes/results/Restore/Classifiers/AlfNet2/valmodels/mobilenet2/2step_448_640/Caltech/alfnet2_2021_02_caltech_13_mv2_b8_e250_lr1e-4'
+
+train_filename: '/raid/algo/SOCISP_SLOW/ADAS/PD/Cityscapes/input/AlfNet2/data/Caltech/datasets/train_gt_p_png'
+
+
+img_channel_mean: [103.939, 116.779, 123.68]
+# setting for scales
+#anchor boxes size
+anchor_box_scales: [[16, 24], [32, 48], [64, 80], [128, 160]]
+# aspect ratio for each scale
+anchor_ratios: [[0.41], [0.41], [0.41], [0.41]]
+# scaling the stdev
+classifier_regr_std: [0.1, 0.1, 0.2, 0.2]
+# overlaps for ignore areas
+
+#-----------------------------------------
+eval_dataset_type: 'Caltech'
+eval_filename: '/raid/algo/SOCISP_SLOW/ADAS/PD/Cityscapes/input/AlfNet2/data/Caltech/datasets/test_p_png_new_reasonable'
+eval_im_input: (512, 640) #image input size, determines the network input size
+eval_output_root: '/raid/algo/SOCISP_SLOW/ADAS/PD/Cityscapes/results/inference/AlfNet2/Caltech/'
+
+eval_min_epoch: 90
+eval_resolution_step: 2
+pd_min_height: 16
+
+create_image: True
+create_image_with_gt: True
+scorethre: 0.1
+overlap_thresh: 0.5
+

@@ -1,0 +1,17 @@
+
+config_name: 'ACSP_alfnet2_thrs0.35_2'
+
+proposals_min_conf: 0.35
+merge_grid_resolution: [20, 20]
+
+allowed_size_arr: [ [[320, 160],[320, 320]],
+                       [[480, 240], [480, 480]],
+                       [[640, 320], [640, 640]],
+                       [[800, 400], [800, 800]]]
+
+scale_factor_arr: [ 1, 1.5, 2, 2.5]
+inital_padding_arr: [[40, 40], [60, 60], [60, 60], [80, 80]]
+min_required_crop_padding_arr: [ [50, 50], [60, 60], [60, 60], [80, 80]]
+
+
+

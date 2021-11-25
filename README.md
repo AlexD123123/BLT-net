@@ -5,7 +5,7 @@ Code for "You Better Look Twice: a new perspective for designing accurate detect
 ### Brief description:
 The code consists of the following main packages:
  - cascademv2: implementation of the CascadeMV2 first stage architecture.
- - 
+  
            Configuration: The configuration of this architecture can be found in cascademv2/trainconfigs/
            
                  Due to many shared parameters, the training and testing configurations are defined in the same file, using different fields, if necessary. For more details see cascademv2/config_cascademv2.py

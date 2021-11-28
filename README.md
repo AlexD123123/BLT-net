@@ -27,8 +27,8 @@ The code consists of the following main packages:
                     To convert it to the pcmad input format please run cascademv2/utils/convert_cascademv2_json_to_pcmad_format.py  
                     
 
-    Note: to run the cascademv2 cpu_nms, gpu_nms, bbox, cython_bbox should be complied.
-    
+    Note: 
+           To run the cascademv2 cpu_nms, gpu_nms, bbox, cython_bbox should be complied.
            These can be done by running the makefiles from the original Faster R-CNN project.
            
            A trained model on Citypersons training dataset as defined in the article can be downloaded here:

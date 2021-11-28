@@ -30,6 +30,10 @@ The code consists of the following main packages:
     Note: to run the cascademv2 cpu_nms, gpu_nms, bbox, cython_bbox should be complied.
     
            These can be done by running the makefiles from the original Faster R-CNN project.
+           
+           A trained model on Citypersons training dataset as defined in the article can be downloaded here:
+           https://drive.google.com/file/d/1O96mTgG8d660HjQDutzdvIYEADxuiM7f/view?usp=sharing
+           
  
  - PCMAD algorithm:
         This module merges and downscales the ROIs produced by the first stage.
